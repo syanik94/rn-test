@@ -16,7 +16,10 @@ export default function Home({navigation}: HomeProps): ReactElement {
 					style={style.logo}
 					source={require('../../../assets/logo.png')} />
 				<View style={style.buttonContainer}>
-					<Button style={style.button} title="Single Player" />
+					<Button 
+						style={style.button} 
+						title="Single Player" 
+						onPress={() => { navigation.navigate("GameSingle") }} /> 
 					<Button style={style.button} title="Multiplayer" />
 					<Button style={style.button} title="Login" />
 					<Button title="Settings"/>
