@@ -100,6 +100,7 @@ export default function GameSingle(): ReactElement {
 				<Board 
 					size={300}
 					state={boardState}
+					gameResult={gameResult}
 					disabled={isBoardDisabled() || turn === Turn.bot}
 					onCellPressed={index => handleCellPressed(index)}/>
 			</SafeAreaView>

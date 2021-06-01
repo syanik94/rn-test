@@ -2,7 +2,7 @@ import { StyleSheet } from "react-native";
 
 const styles = StyleSheet.create({
   board: {
-    backgroundColor: 'green',
+    backgroundColor: '#fff',
     alignContent: 'center',
     flexDirection: 'row',
     flexWrap: "wrap"
