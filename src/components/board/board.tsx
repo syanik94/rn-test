@@ -1,7 +1,7 @@
 import styles from './board.styles';
 import { Text } from '../../components/index';
 import React, { ReactElement } from 'react';
-import { View, TouchableOpacity } from 'react-native';
+import { View, TouchableOpacity, ViewStyle, StyleProp } from 'react-native';
 import { BoardState, BoardResult } from '../../utilis/index'
 import BoardLine from './board-line';
 
@@ -20,6 +20,7 @@ export default function Board({
   gameResult, 
   onCellPressed 
 }: BoardProps): ReactElement {
+
   return (
     <View
       style={[{
@@ -30,10 +31,12 @@ export default function Board({
         return (
           <TouchableOpacity 
             key={index}
-            style={styles.cell} 
+            style={[styles.cell, styles[`cell${index}` as 'cell']]} 
             disabled={disabled || cell != null}
             onPress={() => onCellPressed && onCellPressed(index)}>
-            <Text style={{fontSize: size/8}}>
+            <Text style={[
+              styles.cellText,
+              {fontSize: size/7}]}>
               {cell}
             </Text>
           </TouchableOpacity>
