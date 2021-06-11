@@ -9,6 +9,7 @@ type HomeProps = {
 	navigation: StackNavigationProp<StackNavigatorParams, "Home">;
 }
 export default function Home({navigation}: HomeProps): ReactElement {
+	
   return (
 		<GradientBackground> 
 			<ScrollView contentContainerStyle={style.container}>
@@ -16,13 +17,17 @@ export default function Home({navigation}: HomeProps): ReactElement {
 					style={style.logo}
 					source={require('../../../assets/logo.png')} />
 				<View style={style.buttonContainer}>
-					<Button 
+					<Button
 						style={style.button} 
 						title="Single Player" 
-						onPress={() => { navigation.navigate("GameSingle") }} /> 
+						onPress={() => { navigation.navigate("GameSingle") }} 
+					/>
 					<Button style={style.button} title="Multiplayer" />
 					<Button style={style.button} title="Login" />
-					<Button title="Settings"/>
+					<Button
+						title="Settings"
+						onPress={() => { navigation.navigate("Settings") }} 
+					/>
 				</View>
 			</ScrollView>
 		</GradientBackground>
